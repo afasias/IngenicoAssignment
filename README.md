@@ -30,30 +30,30 @@ For unit testing the JUnit framework is used.
 * No access control layer
 * No proper error reporting
 
-## Building/Deployment Instructions
+## Building / Deployment Instructions
 
 The service is a Java web application. To deploy it one can build and export it as a WAR file which can be used for deployment.
 
-The server must be imported into a server with a servlet container. A popular choice of servlet-enabled server is Tomcat. Tomcat comes with a built-in servlet container (Catalina). Usually, the deployment process is as simple as copying the exported WAR file into the server's webapps directory, which is then picked up automatically.  
+The service must be imported into a server with a servlet container. A popular choice of servlet-enabled server is Tomcat. Tomcat comes with a built-in servlet container (Catalina). Usually, the deployment process is as simple as copying the exported WAR file into the server's webapps directory, which is then picked up automatically.  
 
 Some IDEs provide the option to export a project as a WAR file. However, if one needs to automate the deployment process, he/she can build and deploy the WAR file using command line, like this:
 
-$ cd /path/to/project
-$ jar -cvf service.war *
-$ cp service.war /path/to/tomcat/webapps
+	$ cd /path/to/project
+	$ jar -cvf service.war *
+	$ cp service.war /path/to/tomcat/webapps
 
 ## Usage / Examples
 
 All data from and to the RESTful API is encoded in JSON.
 
-The URL of the API's point of access is: http://localhost:8080/IngenicoAssignment
+The base URL of the API's point of access is: http://localhost:8080/IngenicoAssignment
 
 To create a new Account one has to make a POST request to http://localhost:8080/IngenicoAssignment/rest/Accounts and provide the following information in the request's body:
 
-{
-	"name": [account holder's name],
-	"balance": [initial balance]
-}
+	{
+		"name": [account holder's name],
+		"balance": [initial balance]
+	}
 
 Initial balance must a be non-negative floating point number.
 
@@ -69,11 +69,11 @@ A 200 OK response is returned together with a JSON representation of an array co
 
 To make a Transfer from one Account to another on has to to make a POST request to http://localhost:8080/IngenicoAssignment/rest/Transfers and provide the following information in the request's body:
 
-{
-	"sourceAccountId" : [the ID of the source account],
-	"destinationAccountId" : [the ID of the destination account],
-	"amount": [the amount to be transfered]
-}
+	{
+		"sourceAccountId" : [the ID of the source account],
+		"destinationAccountId" : [the ID of the destination account],
+		"amount": [the amount to be transfered]
+	}
 
 The two specified Accounts must exist, and must be different. The specified amount must a be non-negative floating point number. The source Account must have sufficient balance.
 
