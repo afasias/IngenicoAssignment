@@ -2,11 +2,6 @@ package com.giannistsakiris.ingenico;
 
 import com.giannistsakiris.ingenico.exceptions.InsufficientBalanceException;
 
-/**
- * 
- * @author Giannis
- *
- */
 public class Account {
 
 	private int id;
