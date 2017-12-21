@@ -85,6 +85,8 @@ public class TransferTest extends TestCase {
 				}
 			});
 			threads.add(thread);
+		}
+		for (Thread thread : threads) {
 			thread.start();
 		}
 		for (Thread thread : threads) {
