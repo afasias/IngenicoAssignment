@@ -18,7 +18,7 @@ For the development of the RESTful API, the Jersey framework was chosen. Jersey 
 
 For storing objects in memory, concurrent hash maps have been used. These allow linear time for adding and accessing objects, and are thread-safe.
 
-For generating unique IDs for objects, atomic integers have been used. These guarantee that no two objects of the same type will be assignment the same ID.
+For generating unique IDs for objects, atomic integers have been used. These guarantee that no two objects of the same type will be assigned the same ID.
 
 Any data prone to race conditions, such as account balances, are protected with intrinsic locks on object level.
 
